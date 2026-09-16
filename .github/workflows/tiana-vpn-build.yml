@@ -1,0 +1,106 @@
+name: Build Tiana VPN v3
+
+on:
+  push:
+    branches:
+      - tiana-vpn-build-v3
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout TunnelForge source
+        run: |
+          git clone --depth 1 https://github.com/evokelektrique/tunnel-forge.git app
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.41.2
+          channel: stable
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: app/android/gvisor/go.mod
+
+      - name: Apply Tiana VPN v3 patch
+        working-directory: app
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          # Branding
+          p = Path('android/app/src/main/res/values/strings.xml')
+          s = p.read_text()
+          s = s.replace('<string name="app_name">TunnelForge</string>', '<string name="app_name">Tiana VPN</string>')
+          s = s.replace('<string name="vpn_session_name">TunnelForge</string>', '<string name="vpn_session_name">Tiana VPN</string>')
+          s = s.replace('<string name="vpn_notification_title">TunnelForge VPN</string>', '<string name="vpn_notification_title">Tiana VPN</string>')
+          p.write_text(s)
+
+          # Hard fail before any plaintext L2TP can start when PSK is blank.
+          p = Path('lib/features/home/presentation/pages/home_page.dart')
+          s = p.read_text()
+          needle = """    final profile = row.profile;\n    if (settingsState.connectionMode == ConnectionMode.vpnTunnel) {"""
+          repl = """    final profile = row.profile;\n    if (row.psk.trim().isEmpty) {\n      _toast(\n        AppText.pick(\n          'IPSec pre-shared key (PSK) is required. Connection was blocked to prevent unencrypted L2TP.',\n          'کلید IPSec PSK الزامی است. برای جلوگیری از اتصال L2TP بدون رمزنگاری، اتصال متوقف شد.',\n        ),\n        error: true,\n      );\n      widget.locator<LogsRepository>().append(\n        LogEntry(\n          timestamp: DateTime.now(),\n          level: LogLevel.error,\n          source: LogSource.dart,\n          tag: 'tiana_vpn',\n          message: 'Connect blocked: IPSec PSK is empty; plaintext L2TP is disabled',\n        ),\n      );\n      return;\n    }\n    if (settingsState.connectionMode == ConnectionMode.vpnTunnel) {"""
+          if needle not in s:
+              raise SystemExit('home_page patch point not found')
+          p.write_text(s.replace(needle, repl, 1))
+
+          # Second guard at MethodChannel boundary.
+          p = Path('lib/features/tunnel/data/vpn_client.dart')
+          s = p.read_text()
+          needle = """  }) {\n    final mtuClamped = Profile.normalizeMtu(mtu);"""
+          repl = """  }) {\n    if (psk.trim().isEmpty) {\n      throw ArgumentError.value(psk, 'psk', 'Tiana VPN requires a non-empty IPSec PSK');\n    }\n    final mtuClamped = Profile.normalizeMtu(mtu);"""
+          if needle not in s:
+              raise SystemExit('vpn_client patch point not found')
+          p.write_text(s.replace(needle, repl, 1))
+
+          # Disable native plaintext fallback as a final safety barrier.
+          p = Path('android/app/src/main/cpp/ikev1.c')
+          s = p.read_text()
+          old = 'tunnel_engine_log(ANDROID_LOG_WARN, LOG_TAG, "L2TP without IPsec: plaintext UDP to server (IPsec skipped)");\n  return 0;'
+          new = 'tunnel_engine_log(ANDROID_LOG_ERROR, LOG_TAG, "Tiana VPN: empty PSK rejected; plaintext L2TP disabled");\n  close(fd);\n  ike->esp_fd = -1;\n  return -1;'
+          if old not in s:
+              raise SystemExit('native plaintext fallback patch point not found')
+          p.write_text(s.replace(old, new, 1))
+          PY
+
+      - name: Get dependencies
+        working-directory: app
+        run: flutter pub get
+
+      - name: Download Go dependencies
+        working-directory: app/android/gvisor
+        run: go mod download
+
+      - name: Create Android local.properties
+        working-directory: app/android
+        run: |
+          echo "flutter.sdk=${FLUTTER_ROOT}" > local.properties
+          echo "sdk.dir=${ANDROID_SDK_ROOT}" >> local.properties
+
+      - name: Build debug APK
+        working-directory: app
+        run: flutter build apk --debug
+
+      - name: Rename APK
+        run: cp app/build/app/outputs/flutter-apk/app-debug.apk Tiana_VPN_v3.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v6
+        with:
+          name: Tiana-VPN-v3
+          path: Tiana_VPN_v3.apk
+          retention-days: 30
