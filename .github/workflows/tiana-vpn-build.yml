@@ -41,7 +41,6 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
 
-          # Branding
           p = Path('android/app/src/main/res/values/strings.xml')
           s = p.read_text()
           s = s.replace('<string name="app_name">TunnelForge</string>', '<string name="app_name">Tiana VPN</string>')
@@ -49,7 +48,6 @@ jobs:
           s = s.replace('<string name="vpn_notification_title">TunnelForge VPN</string>', '<string name="vpn_notification_title">Tiana VPN</string>')
           p.write_text(s)
 
-          # Hard fail before any plaintext L2TP can start when PSK is blank.
           p = Path('lib/features/home/presentation/pages/home_page.dart')
           s = p.read_text()
           needle = """    final profile = row.profile;\n    if (settingsState.connectionMode == ConnectionMode.vpnTunnel) {"""
@@ -58,7 +56,6 @@ jobs:
               raise SystemExit('home_page patch point not found')
           p.write_text(s.replace(needle, repl, 1))
 
-          # Second guard at MethodChannel boundary.
           p = Path('lib/features/tunnel/data/vpn_client.dart')
           s = p.read_text()
           needle = """  }) {\n    final mtuClamped = Profile.normalizeMtu(mtu);"""
@@ -67,7 +64,6 @@ jobs:
               raise SystemExit('vpn_client patch point not found')
           p.write_text(s.replace(needle, repl, 1))
 
-          # Disable native plaintext fallback as a final safety barrier.
           p = Path('android/app/src/main/cpp/ikev1.c')
           s = p.read_text()
           old = 'tunnel_engine_log(ANDROID_LOG_WARN, LOG_TAG, "L2TP without IPsec: plaintext UDP to server (IPsec skipped)");\n  return 0;'
@@ -91,16 +87,16 @@ jobs:
           echo "flutter.sdk=${FLUTTER_ROOT}" > local.properties
           echo "sdk.dir=${ANDROID_SDK_ROOT}" >> local.properties
 
-      - name: Build debug APK
+      - name: Build ARM64 debug APK
         working-directory: app
-        run: flutter build apk --debug
+        run: flutter build apk --debug --target-platform android-arm64 --split-per-abi
 
       - name: Rename APK
-        run: cp app/build/app/outputs/flutter-apk/app-debug.apk Tiana_VPN_v3.apk
+        run: cp app/build/app/outputs/flutter-apk/app-arm64-v8a-debug.apk Tiana_VPN_v3_ARM64.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v6
         with:
-          name: Tiana-VPN-v3
-          path: Tiana_VPN_v3.apk
+          name: Tiana-VPN-v3-ARM64
+          path: Tiana_VPN_v3_ARM64.apk
           retention-days: 30
