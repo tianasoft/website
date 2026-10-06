@@ -2,7 +2,7 @@
 
 ## Boundaries
 
-This repository introduces products; it does not host the products themselves.
+This repository introduces Visitors; it does not host the application itself.
 Keep content in semantic HTML, presentation in CSS, and any future necessary
 interaction in a small, local, deferred JavaScript file. Do not add JavaScript
 solely to populate content that can live in HTML.
@@ -16,8 +16,9 @@ on sibling repositories.
 
 - Preserve `lang="fa"`, `dir="rtl"`, Persian copy, and local Vazirmatn fonts.
   Use logical CSS properties and isolate Latin text with `dir` or `bdi`.
-- Keep the existing restrained, text-led layout. Product sections are information,
-  not clickable cards. Do not add inactive buttons or screenshot placeholders.
+- Preserve the imported illustration-led product story and responsive layout.
+  Feature cards and conceptual UI examples are informational, not interactive
+  product controls. Do not add inactive buttons or screenshot placeholders.
 - Preserve semantic headings, native links, visible focus, the skip link,
   sufficient contrast, and readable mobile layouts. Do not hide overflow to
   conceal layout bugs or make essential content depend on JavaScript.
@@ -25,6 +26,7 @@ on sibling repositories.
   needs an approved destination; screenshots need approval and sanitized content.
   Do not copy customer branding, private documents, visitor records, or credentials.
 - No invented launch dates, prices, customer counts, testimonials, or contacts.
+  Keep the development-status notice; use only the approved contact in README.
 
 ## Change and documentation discipline
 
