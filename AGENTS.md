@@ -20,9 +20,9 @@ product. Keep it copy-and-serve static HTML/CSS, with plain JavaScript only when
   identifiers and documentation stay English.
 - Preserve RTL, local assets, accessibility, and relative URLs. The page must work
   at a domain root, in a subdirectory, and when opened directly.
-- Visitors is in development, with no public release or trial. The approved
-  contact is `info@tianasoft.ir`. Illustrative UI is labeled conceptual; do not
-  invent availability, claims, contact details, or real product screenshots.
+- Visitors remains in development. Approved demo/contact destinations and demo
+  availability are documented in README. Keep illustrative UI labeled conceptual;
+  do not invent availability, claims, contacts, or real product screenshots.
 - Sibling product repositories are read-only references unless explicitly in scope.
 - Ask about material scope changes; preserve unrelated work. Do not deploy,
   commit, or push without explicit authorization.

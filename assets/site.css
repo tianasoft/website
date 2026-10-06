@@ -141,9 +141,228 @@ body{font-size:15px;line-height:1.85}
   .site-footer>a:last-child{padding:5px 7px}
 }
 
+.header-actions{display:flex;align-items:center;gap:8px}
+.header-cta{white-space:nowrap}
+.header-demo-cta{border-color:var(--teal);background:var(--teal);color:#fff}
+.header-demo-cta span{color:#dbe8dd}
+.header-demo-cta:hover{background:var(--teal-dark);border-color:var(--teal-dark);color:#fff}
+.mural-header .header-demo-cta{background:#f2f4ec;border-color:#f2f4ec;color:#1b4845}
+.mural-header .header-demo-cta span{color:#1b6659}
+.mural-header .header-demo-cta:hover{background:#fff;border-color:#fff;color:#173f3d}
+@media(max-width:720px){.header-actions{gap:6px}.header-cta{padding:7px 10px;font-size:10px}.header-cta span{margin-right:4px}}
+@media(max-width:370px){.mural-header{padding-inline:12px}.header-actions{gap:4px}.mural-header .header-cta{padding:6px 7px;font-size:9px}.mural-header .brand{gap:6px;font-size:11px}}
+.software-about{display:grid;grid-template-columns:minmax(240px,.75fr) minmax(0,1.6fr);align-items:center;gap:30px;margin-block:28px 18px;padding:22px 27px;border:1px solid #e1e7df;border-radius:15px;background:#fff;box-shadow:0 4px 18px #263d330a}
+.software-about .eyebrow{margin-bottom:4px}
+.software-about h2{font-size:19px;line-height:1.6;margin:0;color:var(--ink)}
+.software-about>p:last-child{margin:0;color:#697773;font-size:12px;line-height:2.1}
+.site-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:13px;border-top:1px solid #dce3dc}
+.footer-back{align-self:center;white-space:nowrap}
+@media(max-width:760px){.software-about{grid-template-columns:1fr;gap:8px;margin-block:20px 12px;padding:17px;border-radius:13px}.software-about h2{font-size:17px}.software-about>p:last-child{font-size:12px;line-height:2}.site-footer{padding-block:13px}}
+.cta-section{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:28px;min-height:0;margin-block:36px 0;padding:38px 42px 48px;border:1px solid #e1e6df;border-radius:14px;background:#f0f3ef;color:#263734;box-shadow:none}
+.cta-section:before,.cta-decoration{display:none}
+.cta-copy h2{font-size:clamp(28px,3.2vw,38px);line-height:1.55;color:#263734;margin:0 0 10px}
+.cta-copy h2 em{color:#285b50}
+.cta-copy .eyebrow{color:#61766b}
+.cta-copy>p:not(.eyebrow){font-size:14px;color:#697773;margin-bottom:20px}
+.button-light{min-height:44px;padding:10px 17px;border:1px solid #285b50;border-radius:8px;background:#285b50;color:#fff;box-shadow:none}
+.button-light:hover{background:#214b43;transform:none}
+.cta-side{display:grid;justify-items:center;gap:8px}
+.cta-side img{width:72px;height:72px;padding:7px;border:1px solid #e1e6df;border-radius:14px;background:#fff;box-shadow:none}
+.cta-side span{color:#697773;font-size:10px;line-height:1.7;text-align:center}
+.independent-note{right:42px;bottom:13px;color:#7a8981;font-size:9px}
+.contact-links{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:17px}
+.contact-links a{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:5px 10px;border:1px solid #dfe5df;border-radius:8px;background:#fff;color:#435a50;font-size:11px;font-weight:700;transition:border-color .15s,background-color .15s}
+.contact-links a:hover{border-color:#b8cbbb;background:#f8faf7}
+.contact-icon{display:grid;place-items:center;width:21px;height:21px;border-radius:6px;background:#edf2ed;color:#426d54;font-size:13px;line-height:1}
+.contact-whatsapp{background:#e8f3ea;color:#25864a}.contact-telegram{background:#e8f1f7;color:#3285ae}.contact-bale{background:#f0edf9;color:#7954b4;font-size:12px;font-weight:900}
+.software-about>p:last-child{font-size:14px;line-height:2.1}
+.cta-section{background:#e3eee7;border-color:#cfdfd3}
+
+/* Device mockups for the product experience preview. */
+.experience-showcase{position:relative;overflow:hidden;background:#f7f8f5;border-block:1px solid #e7ebe6}
+.experience-showcase:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 78% 44%,#e4eee7 0,transparent 40%),radial-gradient(ellipse at 10% 12%,#f1eee4 0,transparent 34%);pointer-events:none}
+.showcase-grid{position:relative;z-index:1}
+.showcase-visual{min-height:510px;padding:0;isolation:isolate}
+.showcase-photo-scene{position:absolute;left:3%;top:7%;width:47%;height:42%;overflow:hidden;border:5px solid #fff;border-radius:20px;box-shadow:0 14px 35px #23383218;transform:rotate(-3deg);z-index:-1}
+.showcase-photo-scene .showcase-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% center;border-radius:15px;box-shadow:none}
+.showcase-photo-scene .showcase-photo-shade{position:absolute;inset:0;border-radius:15px;background:linear-gradient(135deg,#0a353c35,#0a353c10)}
+.showcase-photo-scene .photo-caption{right:10px;bottom:8px;font-size:9px}
+.device-stage{position:absolute;inset:0;z-index:1}
+.laptop-device{position:absolute;left:3%;bottom:48px;width:88%;filter:drop-shadow(0 18px 20px #183b3020)}
+.laptop-screen{position:relative;padding:8px 8px 0;border:1px solid #b9c5bd;border-bottom:0;border-radius:14px 14px 5px 5px;background:#dbe1dc}
+.laptop-bar{height:25px;display:flex;align-items:center;gap:4px;padding-inline:8px;border-radius:7px 7px 0 0;background:#f7f8f5;color:#74827b}
+.laptop-bar>span{width:5px;height:5px;border-radius:50%;background:#c3ccc5}
+.laptop-bar>b{margin-inline-start:auto;font-size:8px;font-weight:650}
+.laptop-content{display:grid;grid-template-columns:28% 1fr;min-height:198px;border:1px solid #e5e9e4;border-radius:0 0 6px 6px;background:#fff;overflow:hidden}
+.laptop-sidebar{display:flex;flex-direction:column;gap:6px;padding:12px 8px;border-left:1px solid #e8ece7;background:#f8faf7;color:#78867e;font-size:8px}
+.laptop-sidebar i{font-style:normal;margin-bottom:8px;color:#285b50;font-size:10px;font-weight:850}
+.laptop-sidebar span{padding:5px 7px;border-radius:5px}
+.laptop-sidebar .active{background:#eaf1eb;color:#315f4a;font-weight:750}
+.laptop-main{padding:12px 13px}
+.laptop-title{display:flex;align-items:center;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid #edf0ec}
+.laptop-title>span{display:grid;gap:2px}.laptop-title small,.laptop-fields small{color:#89958e;font-size:8px}.laptop-title b{color:#2d4840;font-size:11px}.laptop-title em{padding:4px 7px;border-radius:99px;background:#edf4ed;color:#4e795e;font-size:7px;font-style:normal}
+.laptop-fields{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding-block:10px}
+.laptop-fields>div{display:grid;gap:2px;padding:7px;border:1px solid #edf0ec;border-radius:6px}.laptop-fields>div:first-child{grid-column:1/-1}.laptop-fields b{color:#43574f;font-size:8px}
+.laptop-foot{display:flex;justify-content:space-between;padding-top:7px;border-top:1px solid #edf0ec;color:#75847a;font-size:7px}
+.laptop-base{height:9px;margin-inline:-12px;border:1px solid #b7c0ba;border-radius:2px 2px 12px 12px;background:linear-gradient(#d8ded9,#aeb9b2);box-shadow:0 4px 5px #263a3217}
+.phone-device-showcase{position:absolute;right:0;bottom:38px;width:144px;padding:6px;border:1px solid #273d39;border-radius:24px;background:#263a37;box-shadow:0 18px 36px #183b3030;transform:rotate(3deg)}
+.phone-screen-showcase{position:relative;min-height:270px;padding:14px 9px 11px;border-radius:18px;background:#fff}
+.phone-speaker-showcase{position:absolute;top:10px;left:50%;z-index:2;width:27px;height:4px;border-radius:99px;background:#53645e;transform:translateX(-50%)}
+.phone-status-showcase{display:flex;justify-content:space-between;padding:0 3px 9px;color:#6c7a72;font-size:7px;font-weight:750}
+.phone-brand-showcase{display:flex;align-items:center;gap:6px;padding-bottom:10px;border-bottom:1px solid #edf0ec}.phone-brand-showcase>i{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#e5efe7;color:#386850;font-size:10px;font-style:normal}.phone-brand-showcase>span{display:grid;gap:1px;flex:1}.phone-brand-showcase>span b{font-size:8px;color:#314c43}.phone-brand-showcase>span small{font-size:7px;color:#89958e}.phone-brand-showcase>b{font-size:12px;color:#718077}
+.phone-request-showcase,.phone-owner-showcase,.phone-action-showcase{display:grid;gap:4px;padding:11px 1px;border-bottom:1px solid #edf0ec}.phone-request-showcase small,.phone-owner-showcase small,.phone-action-showcase small{font-size:7px;color:#8a968f}.phone-request-showcase b,.phone-owner-showcase b,.phone-action-showcase b{font-size:8px;color:#3d554b;line-height:1.7}.phone-owner-showcase{grid-template-columns:23px 1fr;align-items:center}.phone-owner-showcase>i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#f2ecdf;color:#947b47;font-size:9px;font-style:normal}.phone-owner-showcase>span{display:grid;gap:2px}.phone-action-showcase em{width:max-content;padding:3px 6px;border-radius:99px;background:#edf4ed;color:#4e795e;font-size:7px;font-style:normal}
+.phone-nav-showcase{display:flex;justify-content:space-around;padding-top:11px;color:#668072;font-size:10px}
+.record-preview{display:none}
+.showcase-note{bottom:11px;left:8px;color:#77867e;text-shadow:none;font-size:8px}
+@media(max-width:760px){
+  .experience-showcase{background:#f7f8f5;padding-block:56px 60px}
+  .showcase-visual{min-height:355px;padding:0}
+  .showcase-photo-scene{left:2%;top:4%;width:49%;height:37%;border-width:4px;border-radius:15px}
+  .showcase-photo-scene .showcase-photo,.showcase-photo-scene .showcase-photo-shade{border-radius:11px}
+  .laptop-device{left:0;bottom:40px;width:91%}
+  .laptop-screen{padding:5px 5px 0;border-radius:10px 10px 4px 4px}
+  .laptop-bar{height:20px}.laptop-bar>b{font-size:6px}
+  .laptop-content{min-height:150px;grid-template-columns:25% 1fr}
+  .laptop-sidebar{gap:4px;padding:8px 5px;font-size:6px}.laptop-sidebar i{font-size:8px;margin-bottom:4px}.laptop-sidebar span{padding:4px}
+  .laptop-main{padding:8px}.laptop-title{padding-bottom:6px}.laptop-title small,.laptop-fields small{font-size:6px}.laptop-title b{font-size:8px}.laptop-title em{font-size:6px;padding:3px 5px}.laptop-fields{gap:5px;padding-block:7px}.laptop-fields>div{padding:5px}.laptop-fields b{font-size:6px}.laptop-foot{font-size:6px}.laptop-base{height:7px}
+  .phone-device-showcase{right:0;bottom:28px;width:118px;padding:5px;border-radius:21px}
+  .phone-screen-showcase{min-height:226px;padding:13px 7px 8px;border-radius:16px}.phone-speaker-showcase{top:8px}
+  .phone-status-showcase{font-size:6px;padding-bottom:7px}.phone-brand-showcase{gap:4px;padding-bottom:7px}.phone-brand-showcase>i{width:20px;height:20px;font-size:8px}.phone-brand-showcase>span b{font-size:7px}.phone-brand-showcase>span small{font-size:6px}.phone-brand-showcase>b{font-size:10px}
+  .phone-request-showcase,.phone-owner-showcase,.phone-action-showcase{padding:8px 1px;gap:3px}.phone-request-showcase small,.phone-owner-showcase small,.phone-action-showcase small{font-size:6px}.phone-request-showcase b,.phone-owner-showcase b,.phone-action-showcase b{font-size:7px}.phone-owner-showcase{grid-template-columns:19px 1fr}.phone-owner-showcase>i{width:18px;height:18px;font-size:7px}.phone-action-showcase em{font-size:6px}.phone-nav-showcase{padding-top:8px;font-size:9px}
+  .showcase-note{bottom:4px;left:3px}
+}
+@media(max-width:760px){.cta-section{grid-template-columns:minmax(0,1fr) auto;margin-block:24px 0;padding:26px 20px 44px;border-radius:12px;gap:14px}.cta-copy h2{font-size:clamp(25px,7vw,32px)}.cta-copy>p:not(.eyebrow){font-size:12px}.cta-side img{width:54px;height:54px}.cta-side span{font-size:8px}.independent-note{right:20px;bottom:11px;font-size:8px}}
+@media(max-width:480px){.contact-links{gap:6px;margin-top:14px}.contact-links a{gap:5px;min-height:34px;padding:4px 7px;font-size:10px}.contact-icon{width:19px;height:19px}}
+.showcase-photo-scene,.showcase-note{display:none}
+.laptop-base{position:relative;display:flex;align-items:flex-start;justify-content:center;gap:18px;height:31px;margin-inline:-18px;padding:4px 12px 0;clip-path:polygon(0 0,100% 0,96% 100%,4% 100%);border:0;border-radius:0 0 13px 13px;background:linear-gradient(180deg,#c9d1cb 0%,#aeb9b2 55%,#d8ded9 100%);box-shadow:inset 0 1px 0 #f7faf7,0 4px 5px #263a3217}
+.laptop-keyboard{width:43%;height:16px;border-radius:2px 2px 5px 5px;background:repeating-linear-gradient(to bottom,transparent 0 2px,#718078 2.5px 3.5px,transparent 4px 5px),repeating-linear-gradient(to right,#829087 0 7px,transparent 7px 10px);opacity:.58}
+.laptop-keyboard i{display:none}
+.laptop-trackpad{width:14%;height:11px;border:1px solid #8f9b93;border-radius:2px 2px 5px 5px;background:#c6cec8}
+.showcase-visual{min-height:540px}
+.laptop-device{left:0;bottom:46px;width:100%;filter:drop-shadow(0 19px 23px #183b3026)}
+.laptop-content{min-height:250px;grid-template-columns:25% 1fr}
+.laptop-sidebar{font-size:10px;padding:15px 11px;gap:8px}.laptop-sidebar i{font-size:13px}.laptop-sidebar span{padding:7px 8px}
+.laptop-main{padding:16px 18px}.laptop-bar{height:31px}.laptop-bar>b{font-size:10px}
+.laptop-title{padding-bottom:12px}.laptop-title small,.laptop-fields small{font-size:10px}.laptop-title b{font-size:14px}.laptop-title em{font-size:9px;padding:5px 9px}
+.laptop-fields{gap:9px;padding-block:13px}.laptop-fields>div{padding:10px}.laptop-fields b{font-size:11px}.laptop-foot{font-size:9px;padding-top:9px}
+.phone-device-showcase{transition:box-shadow .2s ease;transform-origin:50% 90%}
+.phone-device-showcase:hover{animation:phone-vibrate .12s linear infinite;box-shadow:0 20px 40px #183b3040}
+@keyframes phone-vibrate{0%,100%{transform:rotate(2deg) translateX(0)}25%{transform:rotate(3deg) translateX(-1px)}75%{transform:rotate(1deg) translateX(1px)}}
+@media(max-width:760px){
+  .showcase-visual{min-height:410px}
+  .laptop-device{left:0;bottom:45px;width:100%}
+  .laptop-content{min-height:190px;grid-template-columns:24% 1fr}
+  .laptop-sidebar{font-size:7px;padding:9px 6px;gap:5px}.laptop-sidebar i{font-size:9px}.laptop-sidebar span{padding:4px 5px}
+  .laptop-main{padding:9px 10px}.laptop-bar{height:23px}.laptop-bar>b{font-size:7px}
+  .laptop-title{padding-bottom:7px}.laptop-title small,.laptop-fields small{font-size:7px}.laptop-title b{font-size:9px}.laptop-title em{font-size:6px;padding:3px 5px}
+  .laptop-fields{gap:5px;padding-block:8px}.laptop-fields>div{padding:6px}.laptop-fields b{font-size:7px}.laptop-foot{font-size:6px;padding-top:6px}
+  .laptop-base{height:22px;margin-inline:-11px;padding-top:3px;gap:10px}.laptop-keyboard{height:12px;width:46%}.laptop-trackpad{height:8px;width:14%}
+  .phone-device-showcase{right:0;bottom:25px;width:126px}
+}
+@media(prefers-reduced-motion:reduce){.phone-device-showcase:hover{animation:none}}
+
+/* Give the laptop body a more recognizable open-clamshell, three-quarter silhouette. */
+.laptop-device{left:1%;width:81%;transform:perspective(1000px) rotateY(-13deg) rotateX(1deg) rotateZ(-.5deg);transform-origin:50% 100%;filter:drop-shadow(0 25px 20px #183b3038)}
+.laptop-screen{padding:11px 11px 0;border-width:3px;border-radius:18px 18px 4px 4px;background:linear-gradient(145deg,#65756e 0%,#253a34 78%)}
+.laptop-content{min-height:220px}
+.laptop-base{height:48px;margin-inline:-26px;padding:8px 13px 0;gap:25px;background:linear-gradient(180deg,#e8ece9 0%,#c3cbc5 28%,#9eaaa2 72%,#dbe0dc 100%);border:1px solid #a4afa7;border-radius:0 0 17px 17px;box-shadow:inset 0 1px 0 #fff,0 7px 9px #263a3225}
+.laptop-base:before{content:"";position:absolute;top:2px;left:12%;right:12%;height:2px;border-radius:50%;background:linear-gradient(90deg,transparent,#77877e 18%,#77877e 82%,transparent);opacity:.8}
+.laptop-keyboard{width:53%;height:28px;border:1px solid #8c9991;border-radius:4px 4px 7px 7px;background:repeating-linear-gradient(to bottom,transparent 0 4px,#4f6258 4.5px 5.5px,transparent 6px 7px),repeating-linear-gradient(to right,#6f8076 0 8px,#aab4ad 8px 10px,transparent 10px 13px);opacity:.92}
+.laptop-trackpad{width:16%;height:19px;border:1px solid #829087;border-radius:3px 3px 7px 7px;background:linear-gradient(145deg,#e2e7e3,#c1cac3);box-shadow:inset 0 1px 2px #ffffffb5}
+.phone-device-showcase{right:0;width:132px}
+@media(max-width:760px){
+  .laptop-device{left:0;width:87%;transform:perspective(900px) rotateY(-8deg) rotateX(1deg)}
+  .laptop-screen{padding:6px 6px 0;border-width:2px;border-radius:12px 12px 3px 3px}
+  .laptop-content{min-height:178px}
+  .laptop-base{height:33px;margin-inline:-15px;padding:4px 8px 0;gap:12px}
+  .laptop-keyboard{width:52%;height:19px}
+  .laptop-trackpad{width:16%;height:13px}
+  .phone-device-showcase{width:116px}
+}
+
+/* Stronger three-quarter view so the hardware reads as a laptop at a glance. */
+.laptop-device{left:0;width:78%;transform:perspective(1050px) rotateY(-23deg) rotateX(3deg) rotateZ(-1deg);transform-origin:50% 100%;filter:drop-shadow(0 27px 23px #183b3040)}
+.laptop-screen{border-width:4px;border-radius:21px 21px 5px 5px}
+.laptop-base{height:56px;margin-inline:-32px;padding-top:10px;gap:29px;clip-path:polygon(0 0,100% 0,91% 100%,9% 100%);border-radius:0 0 18px 18px}
+.laptop-keyboard{width:55%;height:34px;background:repeating-linear-gradient(to bottom,transparent 0 4px,#4b5d53 4.5px 5.5px,transparent 6px 7px),repeating-linear-gradient(to right,#68796f 0 8px,#aab4ad 8px 10px,transparent 10px 13px)}
+.laptop-trackpad{width:17%;height:22px}
+.phone-device-showcase{width:120px}
+@media(max-width:760px){
+  .laptop-device{left:0;width:85%;transform:perspective(900px) rotateY(-13deg) rotateX(2deg) rotateZ(-.5deg)}
+  .laptop-screen{border-width:2px;border-radius:13px 13px 3px 3px}
+  .laptop-base{height:39px;margin-inline:-17px;padding-top:5px;gap:14px;clip-path:polygon(0 0,100% 0,94% 100%,6% 100%)}
+  .laptop-keyboard{width:54%;height:23px}
+  .laptop-trackpad{width:17%;height:15px}
+  .phone-device-showcase{width:108px}
+}
+
+/* Make the keyboard deck unmistakable: deeper chassis, distinct keys and trackpad. */
+.laptop-device{width:81%;transform:perspective(1100px) rotateY(-17deg) rotateX(2deg) rotateZ(-.5deg)}
+.laptop-screen{border-width:5px;border-radius:22px 22px 5px 5px}
+.laptop-base{height:82px;margin-inline:-38px;padding:13px 14px 0;gap:30px;clip-path:polygon(0 0,100% 0,89% 100%,11% 100%);border:1px solid #98a49b;border-radius:0 0 20px 20px;background:linear-gradient(180deg,#eef1ee 0%,#cbd2cd 22%,#aab4ad 72%,#dfe4e0 100%);box-shadow:inset 0 2px 0 #fff,0 9px 12px #263a3228}
+.laptop-base:before{top:3px;left:8%;right:8%;height:4px;background:linear-gradient(180deg,#8a978e,#dce1dd);opacity:1}
+.laptop-keyboard{width:56%;height:53px;border:1px solid #8c9991;border-radius:5px 5px 7px 7px;background-color:#bfc8c1;background-image:repeating-linear-gradient(to bottom,transparent 0 7px,#576960 7px 11px,transparent 11px 14px),repeating-linear-gradient(to right,#576960 0 8px,#e1e5e2 8px 10px,transparent 10px 13px);background-position:0 0,0 0;background-size:100% 14px,100% 14px;box-shadow:inset 0 1px 2px #ffffffa0;opacity:1}
+.laptop-trackpad{width:19%;height:40px;border:1px solid #87948b;border-radius:4px 4px 8px 8px;background:linear-gradient(145deg,#edf0ed,#c5cdc7);box-shadow:inset 0 1px 3px #ffffffc9,0 1px 1px #7f8d84}
+.phone-device-showcase{width:108px;right:-1%;bottom:35px}
+@media(max-width:760px){
+  .laptop-device{width:87%;transform:perspective(900px) rotateY(-10deg) rotateX(1deg)}
+  .laptop-screen{border-width:3px;border-radius:14px 14px 3px 3px}
+  .laptop-base{height:50px;margin-inline:-19px;padding:6px 8px 0;gap:13px;clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);border-radius:0 0 13px 13px}
+  .laptop-base:before{top:2px;height:3px}
+  .laptop-keyboard{width:55%;height:32px;border-radius:3px 3px 5px 5px;background-size:100% 10px,100% 10px}
+  .laptop-trackpad{width:18%;height:23px;border-radius:3px 3px 6px 6px}
+  .phone-device-showcase{width:102px;right:0;bottom:29px}
+}
+@media(min-width:761px){.laptop-base{height:104px;padding-top:15px}.laptop-keyboard{height:67px}.laptop-trackpad{height:51px}}
+@media(max-width:760px){.laptop-base{height:61px;padding-top:7px}.laptop-keyboard{height:42px}.laptop-trackpad{height:31px}}
+.phone-device-showcase{width:128px;padding:6px;border-radius:23px;right:0;bottom:40px;transform:rotate(2deg)}
+.phone-screen-showcase{min-height:0;padding:12px 9px 8px;border-radius:17px}
+.phone-status-showcase{padding-bottom:6px}
+.phone-brand-showcase{padding-bottom:6px}
+.phone-request-showcase,.phone-owner-showcase,.phone-action-showcase{padding:7px 1px;gap:3px}
+.phone-nav-showcase{padding-top:7px}
+@media(max-width:760px){
+  .phone-device-showcase{width:116px;padding:5px;border-radius:21px;bottom:31px}
+  .phone-screen-showcase{min-height:0;padding:12px 7px 8px;border-radius:16px}
+  .phone-request-showcase,.phone-owner-showcase,.phone-action-showcase{padding:6px 1px;gap:3px}
+  .phone-nav-showcase{padding-top:6px}
+}
+
+/* Laptop silhouette follows the supplied front-view reference. */
+.laptop-device{left:3%;width:80%;transform:none;filter:drop-shadow(0 24px 22px #183b3033)}
+.laptop-screen{padding:10px 10px 0;border:5px solid #344d58;border-bottom:0;border-radius:22px 22px 2px 2px;background:#344d58}
+.laptop-content{min-height:228px}
+.laptop-base{display:block;position:relative;height:102px;margin-inline:-48px;padding:10px 12px 5px;clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);border:0;border-radius:0 0 12px 12px;background:linear-gradient(180deg,#f5f6f4 0%,#d5dad8 82%,#c5cdd1 83%,#c5cdd1 100%);box-shadow:inset 0 1px 0 #fff,0 6px 8px #263a321c}
+.laptop-base:before{top:1px;left:10%;right:10%;height:3px;border-radius:0;background:#8e9da1}
+.laptop-keyboard{position:absolute;top:10px;left:12%;display:block;width:76%;height:48px;border:0;border-radius:2px;background-color:#405a66;background-image:repeating-linear-gradient(to bottom,transparent 0 7px,#d2d9d7 7px 10px),repeating-linear-gradient(to right,#405a66 0 8px,#d2d9d7 8px 11px);background-size:auto;background-position:center;box-shadow:none;opacity:1}
+.laptop-trackpad{position:absolute;bottom:7px;left:50%;display:block;width:23%;height:28px;transform:translateX(-50%);border:0;border-radius:2px 2px 9px 9px;background:#cbd4de;box-shadow:inset 0 1px 1px #b6c0cb}
+.phone-device-showcase{right:-1%;bottom:38px;width:124px}
+.phone-screen-showcase{padding:8px 8px 6px}
+.phone-status-showcase{padding-bottom:3px}
+.phone-brand-showcase{padding-bottom:4px}
+.phone-request-showcase,.phone-owner-showcase,.phone-action-showcase{padding:3px 1px;gap:2px}
+.phone-request-showcase b,.phone-owner-showcase b,.phone-action-showcase b{line-height:1.45}
+.phone-nav-showcase{padding-top:5px}
+@media(max-width:760px){
+  .laptop-device{left:1%;width:91%;transform:none}
+  .laptop-screen{padding:6px 6px 0;border-width:3px;border-radius:14px 14px 2px 2px}
+  .laptop-content{min-height:178px}
+  .laptop-base{height:70px;margin-inline:-23px;padding:6px 7px 4px;clip-path:polygon(9% 0,91% 0,100% 100%,0 100%);border-radius:0 0 9px 9px}
+  .laptop-keyboard{top:6px;left:11%;width:78%;height:33px}
+  .laptop-trackpad{bottom:5px;width:23%;height:19px}
+  .phone-device-showcase{right:0;bottom:28px;width:114px}
+  .phone-screen-showcase{padding:10px 7px 7px}
+  .phone-status-showcase{padding-bottom:4px}
+  .phone-brand-showcase{padding-bottom:5px}
+  .phone-request-showcase,.phone-owner-showcase,.phone-action-showcase{padding:4px 1px;gap:2px}
+  .phone-nav-showcase{padding-top:5px}
+}
+
 /* Integration: keyboard navigation and honest product availability. */
 :focus-visible{outline:2px solid var(--teal);outline-offset:4px}
-.process-mural :focus-visible,.cta-section :focus-visible{outline-color:#fff}
+.process-mural :focus-visible{outline-color:#fff}
 .skip-link{position:absolute;inset-block-start:8px;inset-inline-start:16px;z-index:30;padding:8px 16px;border:1px solid var(--teal);border-radius:8px;background:#fff;color:var(--ink);transform:translateY(-180%)}
 .skip-link:focus{transform:none}
+.showcase-note{display:block;inset-inline:0;text-align:center;font-size:11px}
+@media(max-width:430px){.cta-section{grid-template-columns:minmax(0,1fr)}.cta-side{display:none}}
 .availability-note{width:min(1200px,calc(100% - 40px));margin:16px auto 0;color:var(--teal);font-size:13px;line-height:1.9;text-align:center}

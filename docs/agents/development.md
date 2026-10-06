@@ -26,7 +26,8 @@ on sibling repositories.
   needs an approved destination; screenshots need approval and sanitized content.
   Do not copy customer branding, private documents, visitor records, or credentials.
 - No invented launch dates, prices, customer counts, testimonials, or contacts.
-  Keep the development-status notice; use only the approved contact in README.
+  Keep the development/demo-status notice; use only the approved demo and contact
+  destinations in README.
 
 ## Change and documentation discipline
 

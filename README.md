@@ -2,8 +2,11 @@
 
 A standalone Persian/RTL marketing page for **Visitors**, Tianasoft's event
 registration and staff follow-up software. The homepage focuses on Visitors,
-not Assistant. Visitors remains in development, without a public release or trial.
-The owner-approved introduction/contact address is **info@tianasoft.ir**.
+not Assistant. Visitors remains in development, without a public release.
+The owner-approved demo destination is <https://visitors.tianasoft.ir/>. Its service
+is not live yet and will be brought up separately; this repository only links to it.
+Approved contacts are **info@tianasoft.ir** and **09103138975** (phone, WhatsApp,
+Telegram, and Bale).
 
 Plain HTML, CSS, and a small deferred JavaScript file for optional scroll reveals
 and back-to-top visibility. No build, packages, backend, CDN, analytics, or external
@@ -32,7 +35,6 @@ assets/
   site.js
   tianasoft-logo.png
   visitor-followup-workflow.webp
-  trade-fair-hero.webp
   fonts/
     vazirmatn-arabic-wght-normal.woff2
     vazirmatn-latin-wght-normal.woff2
@@ -67,13 +69,15 @@ For contributor guidance, see [AGENTS.md](AGENTS.md).
 For page changes:
 
 1. Open the page over HTTP and directly from `index.html`. Check Persian text,
-   loaded Vazirmatn fonts, logo, both illustrations, and the development notice.
+   loaded Vazirmatn fonts, logo, hero illustration, conceptual device mockups,
+   and the development/demo-availability notice.
 2. Inspect desktop (around 1280px) and narrow mobile (320–390px). Check RTL order,
    readable text, wrapping, and no page or hero horizontal scrolling; also check
    200% browser zoom. The quick-navigation strip may scroll horizontally.
 3. Use Tab and Enter to check the skip link, section navigation, FAQ disclosure,
    and back-to-top link. Focus must be visible and links must reach the correct
-   destination. Verify the contact link's `mailto:` address without sending mail.
+   destination. Check the demo and contact destinations without sending messages
+   or placing calls; the future demo service is not part of this site's checks.
 4. Check the browser console and network for errors or external requests.
    Content, links, and FAQ must work with JavaScript disabled. With reduced motion
    enabled, content must remain visible without scroll animations.
@@ -88,11 +92,12 @@ static page. Add focused automated tests only when meaningful behavior needs the
 ## Assets and provenance
 
 The page, CSS, and optional interactions were imported from
-`../visitors/marketing-site/` at commit `177ac9d`, following its initial addition in
+`../visitors/marketing-site/` through commit `6492106`, following its initial addition in
 `1a51124`. That repository is a read-only source, not a runtime dependency.
 
-The two artwork files are WebP conversions of the source site's PNG illustrations;
-the trade-fair image is reduced to 1280px wide. The Tianasoft logo remains the
-trimmed 128px copy of `../visitors/static/tianasoft-logo.png` already used here.
+The hero artwork is a WebP conversion of the source site's workflow PNG.
+The device mockups are static HTML/CSS, not live application screens.
+The Tianasoft logo remains the trimmed 128px copy of
+`../visitors/static/tianasoft-logo.png` already used here.
 Vazirmatn variable WOFF2 files are unchanged and covered by the bundled
 [SIL Open Font License](assets/fonts/Vazirmatn-OFL.txt).
