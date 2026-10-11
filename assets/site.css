@@ -164,8 +164,14 @@ body{font-size:15px;line-height:1.85}
 .software-about .eyebrow{margin-bottom:4px}
 .software-about h2{font-size:19px;line-height:1.6;margin:0;color:var(--ink)}
 .software-about>p:last-child{margin:0;color:#697773;font-size:12px;line-height:2.1}
-.site-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:13px;border-top:1px solid #dce3dc}
+.site-footer{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px 32px;padding-block:24px;border-top:1px solid #dce3dc}
 .footer-back{align-self:center;white-space:nowrap}
+.footer-about{flex:1 1 340px}
+.footer-about p{max-width:48ch;margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.9}
+.site-footer .footer-brand{font-size:15px}
+.footer-links{display:flex;align-items:center;flex-wrap:wrap;gap:8px 18px}
+.footer-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--teal);font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.site-footer .footer-back{display:inline-flex;align-items:center;min-height:44px;margin-inline-end:48px;font-size:13px}
 @media(max-width:760px){.software-about{grid-template-columns:1fr;gap:8px;margin-block:20px 12px;padding:17px;border-radius:13px}.software-about h2{font-size:17px}.software-about>p:last-child{font-size:12px;line-height:2}}
 @media(max-width:760px){
   .site-footer{width:calc(100% - 36px);min-height:64px;gap:8px;padding-block:14px 72px;font-size:12px}
