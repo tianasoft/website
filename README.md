@@ -6,8 +6,7 @@ not Assistant. The owner confirms the website and product projects are complete;
 bug fixes and feature development continue. The website is live at
 <https://tianasoft.ir/>. The demo is available at the owner-approved destination
 <https://demo.tianasoft.ir/>; this repository only links to that separate service.
-Approved contacts are **info@tianasoft.ir** and **09103138975** (phone, WhatsApp,
-Telegram, and Bale).
+Approved contact is **09103138975** (phone, WhatsApp, Telegram, and Bale).
 
 Plain HTML, CSS, and a small deferred JavaScript file for optional scroll reveals
 and back-to-top visibility. No build, packages, backend, CDN, analytics, or external

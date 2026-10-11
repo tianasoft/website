@@ -208,11 +208,10 @@ body{font-size:15px;line-height:1.85}
 @media(max-width:430px){.cta-section{grid-template-columns:minmax(0,1fr)}.cta-side{display:none}}
 .availability-note{width:min(1200px,calc(100% - 40px));margin:16px auto 0;color:var(--teal);font-size:13px;line-height:1.9;text-align:center}
 
-/* Hero actions and matching closing CTA pair. */
+/* Hero and closing CTA actions. */
 .hero-actions,.cta-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
 .hero-actions{justify-content:center;margin:18px 16px 22px;color:#fff}
 .hero-actions .button,.cta-actions .button{min-height:48px;gap:10px;font-size:14px;line-height:1.6}
 .hero-actions .button-dark{background:var(--white);color:var(--teal-dark);box-shadow:none}
 .hero-actions .button-dark:hover{background:#e3eee7}
 .hero-secondary-action{border:1px solid currentColor}
-.cta-actions .hero-secondary-action{border-radius:8px;color:var(--teal-dark)}
