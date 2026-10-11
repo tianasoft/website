@@ -12,8 +12,8 @@ Telegram, and Bale).
 Plain HTML, CSS, and a small deferred JavaScript file for optional scroll reveals
 and back-to-top visibility. No build, packages, backend, CDN, analytics, or external
 runtime requests. Content, navigation, and the native FAQ work without JavaScript.
-Keep illustrations and mockups labeled conceptual. Actual product screenshots are
-approved only from a local disposable instance with synthetic data and neutral
+Keep illustrations and illustrative UI labeled conceptual. Product screenshots
+are approved only from a local disposable instance with synthetic data and neutral
 sample organization branding; label them as sample data, not customer records.
 
 ## Preview
@@ -37,7 +37,11 @@ assets/
   site.css
   site.js
   tianasoft-logo.png
+  tianasoft-social-preview.jpg
   visitor-followup-workflow.webp
+  visitors-registration.webp
+  visitors-followup.webp
+  visitors-manager-report.webp
   fonts/
     vazirmatn-arabic-wght-normal.woff2
     vazirmatn-latin-wght-normal.woff2
@@ -72,8 +76,9 @@ For contributor guidance, see [AGENTS.md](AGENTS.md).
 For page changes:
 
 1. Open the page over HTTP and directly from `index.html`. Check Persian text,
-   loaded Vazirmatn fonts, logo, hero illustration, conceptual visuals and any
-   product screenshots with sample-data labels, and the demo-availability notice.
+   loaded Vazirmatn fonts, logo, hero illustration, and the real registration,
+   follow-up, and manager-report screenshots with synthetic-data labels. Check
+   the demo-availability notice and full-size screenshot links.
 2. Inspect desktop (around 1280px) and narrow mobile (320–390px). Check RTL order,
    readable text, wrapping, and no page or hero horizontal scrolling; also check
    200% browser zoom. The quick-navigation strip may scroll horizontally.
@@ -86,7 +91,8 @@ For page changes:
    Content, links, and FAQ must work with JavaScript disabled. With reduced motion
    enabled, content must remain visible without scroll animations.
 5. Serve the page from a subdirectory and confirm CSS, JavaScript, fonts, logo,
-   and artwork load. Confirm all relative resource and fragment links resolve.
+   artwork, and screenshots load. Confirm all relative resource and fragment links
+   resolve.
 6. Run `node --check assets/site.js` and `git diff --check`.
 
 For documentation-only edits, check affected instructions, local links, and
@@ -99,8 +105,19 @@ The page, CSS, and optional interactions were imported from
 `../visitors/marketing-site/` through commit `6492106`, following its initial addition in
 `1a51124`. That repository is a read-only source, not a runtime dependency.
 
-The hero artwork is a WebP conversion of the source site's workflow PNG.
-The device mockups are static HTML/CSS, not live application screens.
+The hero artwork is a WebP conversion of the source site's workflow PNG;
+illustrations and remaining illustrative UI are conceptual.
+
+The three `assets/visitors-*.webp` files are cropped screenshots of real registration,
+follow-up, and manager-report pages from Visitors commit
+`6910f58e7ac5187fc47103b2e95b52c39749d22a`. They were captured from a disposable local
+instance using only synthetic data and neutral sample organization branding, not
+customer records or performance statistics.
+
+`assets/tianasoft-social-preview.jpg` (1200×630) combines the existing logo and
+workflow illustration with the Persian software title in the bundled Vazirmatn
+font; it is not a product screenshot.
+
 The Tianasoft logo remains the trimmed 128px copy of
 `../visitors/static/tianasoft-logo.png` already used here.
 Vazirmatn variable WOFF2 files are unchanged and covered by the bundled
