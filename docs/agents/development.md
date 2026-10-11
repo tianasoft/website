@@ -22,12 +22,17 @@ on sibling repositories.
 - Preserve semantic headings, native links, visible focus, the skip link,
   sufficient contrast, and readable mobile layouts. Do not hide overflow to
   conceal layout bugs or make essential content depend on JavaScript.
-- Describe only capabilities supported by the product sources. A future trial
-  needs an approved destination; screenshots need approval and sanitized content.
-  Do not copy customer branding, private documents, visitor records, or credentials.
+- Describe only capabilities supported by the product sources. The live demo
+  destination is approved in README; do not infer commercial terms or guarantees.
+  Product screenshots are approved only from a local disposable instance using
+  synthetic data and neutral sample organization branding. Never capture live
+  customer records or copy customer branding, contacts, private documents, or
+  credentials into marketing assets.
 - No invented launch dates, prices, customer counts, testimonials, or contacts.
-  Keep the development/demo-status notice; use only the approved demo and contact
-  destinations in README.
+  Keep the availability notice factual: the demo is available, with ongoing bug
+  fixes and feature development. Use only the approved demo and contact
+  destinations in README; do not claim demo resets, privacy isolation, or delivery
+  automation without evidence.
 
 ## Change and documentation discipline
 

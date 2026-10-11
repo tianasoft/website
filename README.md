@@ -2,16 +2,19 @@
 
 A standalone Persian/RTL marketing page for **Visitors**, Tianasoft's event
 registration and staff follow-up software. The homepage focuses on Visitors,
-not Assistant. Visitors remains in development, without a public release.
-The owner-approved demo destination is <https://visitors.tianasoft.ir/>. Its service
-is not live yet and will be brought up separately; this repository only links to it.
+not Assistant. The owner confirms the website and product projects are complete;
+bug fixes and feature development continue. The website is live at
+<https://tianasoft.ir/>. The demo is available at the owner-approved destination
+<https://demo.tianasoft.ir/>; this repository only links to that separate service.
 Approved contacts are **info@tianasoft.ir** and **09103138975** (phone, WhatsApp,
 Telegram, and Bale).
 
 Plain HTML, CSS, and a small deferred JavaScript file for optional scroll reveals
 and back-to-top visibility. No build, packages, backend, CDN, analytics, or external
 runtime requests. Content, navigation, and the native FAQ work without JavaScript.
-Illustrations and UI examples are conceptual, not product screenshots or real data.
+Keep illustrations and mockups labeled conceptual. Actual product screenshots are
+approved only from a local disposable instance with synthetic data and neutral
+sample organization branding; label them as sample data, not customer records.
 
 ## Preview
 
@@ -69,15 +72,16 @@ For contributor guidance, see [AGENTS.md](AGENTS.md).
 For page changes:
 
 1. Open the page over HTTP and directly from `index.html`. Check Persian text,
-   loaded Vazirmatn fonts, logo, hero illustration, conceptual device mockups,
-   and the development/demo-availability notice.
+   loaded Vazirmatn fonts, logo, hero illustration, conceptual visuals and any
+   product screenshots with sample-data labels, and the demo-availability notice.
 2. Inspect desktop (around 1280px) and narrow mobile (320–390px). Check RTL order,
    readable text, wrapping, and no page or hero horizontal scrolling; also check
    200% browser zoom. The quick-navigation strip may scroll horizontally.
 3. Use Tab and Enter to check the skip link, section navigation, FAQ disclosure,
    and back-to-top link. Focus must be visible and links must reach the correct
-   destination. Check the demo and contact destinations without sending messages
-   or placing calls; the future demo service is not part of this site's checks.
+   destination. Confirm demo links point to `https://demo.tianasoft.ir/` and the
+   availability notice describes the live demo. Check demo/contact destinations
+   read-only: no form submissions, signups, staff login, messages, or calls.
 4. Check the browser console and network for errors or external requests.
    Content, links, and FAQ must work with JavaScript disabled. With reduced motion
    enabled, content must remain visible without scroll animations.

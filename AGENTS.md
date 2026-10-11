@@ -20,9 +20,11 @@ product. Keep it copy-and-serve static HTML/CSS, with plain JavaScript only when
   identifiers and documentation stay English.
 - Preserve RTL, local assets, accessibility, and relative URLs. The page must work
   at a domain root, in a subdirectory, and when opened directly.
-- Visitors remains in development. Approved demo/contact destinations and demo
-  availability are documented in README. Keep illustrative UI labeled conceptual;
-  do not invent availability, claims, contacts, or real product screenshots.
+- The website and demo are live; bug fixes and feature development continue.
+  README documents owner-confirmed status and approved demo/contact destinations.
+  Keep illustrative UI labeled conceptual; do not invent claims or contacts.
+  Actual product screenshots are approved only with local disposable synthetic
+  data and neutral sample organization branding.
 - Sibling product repositories are read-only references unless explicitly in scope.
 - Ask about material scope changes; preserve unrelated work. Do not deploy,
   commit, or push without explicit authorization.
