@@ -1,6 +1,6 @@
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('motion-ready');
-  const revealTargets = document.querySelectorAll('.journey-card, .capability-card, .comparison-board, .manager-visual, .faq-list > details');
+  const revealTargets = document.querySelectorAll('.journey-card, .capability-card, .manager-visual, .faq-list > details');
   revealTargets.forEach(item => item.classList.add('reveal-pending'));
   const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) {
